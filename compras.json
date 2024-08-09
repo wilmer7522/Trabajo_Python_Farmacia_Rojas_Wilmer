@@ -1,0 +1,109 @@
+{
+    "compras": [
+        {
+            "fechaCompra": "2024-08-09",
+            "proveedor": {
+                "nombre": "ProveedorC",
+                "contacto": "contacto@proveedorc.com"
+            },
+            "medicamentosComprados": [
+                {
+                    "nombreMedicamento": "Loratadina",
+                    "cantidadComprada": 3,
+                    "precioCompra": 12,
+                    "total": 36
+                }
+            ]
+        },
+        {
+            "fechaCompra": "2024-08-09",
+            "proveedor": {
+                "nombre": "ProveedorC",
+                "contacto": "contacto@proveedorc.com"
+            },
+            "medicamentosComprados": [
+                {
+                    "nombreMedicamento": "Paracetamol",
+                    "cantidadComprada": 3,
+                    "precioCompra": 12,
+                    "total": 36
+                }
+            ]
+        },
+        {
+            "fechaCompra": "2024-08-09",
+            "proveedor": {
+                "nombre": "ProveedorC",
+                "contacto": "contacto@proveedorc.com"
+            },
+            "medicamentosComprados": [
+                {
+                    "nombreMedicamento": "Paracetamol",
+                    "cantidadComprada": 3,
+                    "precioCompra": 12,
+                    "total": 36
+                }
+            ]
+        },
+        {
+            "fechaCompra": "2024-08-09",
+            "proveedor": {
+                "nombre": "ProveedorA",
+                "contacto": "contacto@proveedora.com"
+            },
+            "medicamentosComprados": [
+                {
+                    "nombreMedicamento": "Paracetamol",
+                    "cantidadComprada": 4,
+                    "precioCompra": 12,
+                    "total": 48
+                }
+            ]
+        },
+        {
+            "fechaCompra": "2024-08-09",
+            "proveedor": {
+                "nombre": "ProveedorB",
+                "contacto": "contacto@proveedorb.com"
+            },
+            "medicamentosComprados": [
+                {
+                    "nombreMedicamento": "Paracetamol",
+                    "cantidadComprada": 5,
+                    "precioCompra": 12,
+                    "total": 60
+                }
+            ]
+        },
+        {
+            "fechaCompra": "2024-08-09",
+            "proveedor": {
+                "nombre": "ProveedorC",
+                "contacto": "contacto@proveedorc.com"
+            },
+            "medicamentosComprados": [
+                {
+                    "nombreMedicamento": "Ibuprofeno",
+                    "cantidadComprada": 5,
+                    "precioCompra": 10,
+                    "total": 50
+                }
+            ]
+        },
+        {
+            "fechaCompra": "2024-08-09",
+            "proveedor": {
+                "nombre": "ProveedorB",
+                "contacto": "contacto@proveedorb.com"
+            },
+            "medicamentosComprados": [
+                {
+                    "nombreMedicamento": "Losartan",
+                    "cantidadComprada": 5,
+                    "precioCompra": 10,
+                    "total": 50
+                }
+            ]
+        }
+    ]
+}

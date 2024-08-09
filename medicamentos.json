@@ -2,7 +2,7 @@
     {
         "nombre": "Paracetamol",
         "precio": 20,
-        "stock": 150,
+        "stock": 160,
         "fechaExpiracion": "2024-06-15T00:00:00Z",
         "proveedor": {
             "nombre": "ProveedorA",
@@ -12,7 +12,7 @@
     {
         "nombre": "Ibuprofeno",
         "precio": 25,
-        "stock": 50,
+        "stock": 55,
         "fechaExpiracion": "2024-12-01T00:00:00Z",
         "proveedor": {
             "nombre": "ProveedorB",
@@ -32,7 +32,7 @@
     {
         "nombre": "Amoxicilina",
         "precio": 40,
-        "stock": 75,
+        "stock": 70,
         "fechaExpiracion": "2025-08-11T00:00:00Z",
         "proveedor": {
             "nombre": "ProveedorA",
@@ -52,7 +52,7 @@
     {
         "nombre": "Losartan",
         "precio": 55,
-        "stock": 95,
+        "stock": 100,
         "fechaExpiracion": "2024-07-30T00:00:00Z",
         "proveedor": {
             "nombre": "ProveedorC",

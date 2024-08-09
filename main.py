@@ -11,7 +11,7 @@ def abrirMedicamentos():
 
 def guardarMedicamentos(dataMedi):
     with open('medicamentos.json', 'w', encoding='utf=8') as outfile:
-        json.dump(dataMedi,outfile)
+        json.dump(dataMedi,outfile,indent=4)
 #ventas
 def abrirVentas():
     mijsonVentas=[]
@@ -31,7 +31,7 @@ def abrirCompras():
 
 def guardarCompras(dataCom):
     with open('compras.json', 'w', encoding='utf=8') as outfile:
-        json.dump(dataCom,outfile)
+        json.dump(dataCom,outfile,indent=4)
 #Empleados
 def abrirEmpleados():
     mijsonEmpleados=[]
@@ -51,8 +51,18 @@ def abrirPacientes():
 
 def guardarPacientes(dataPac):
     with open('pacientes.json', 'w', encoding='utf=8') as outfile:
-        json.dump(dataPac,outfile,indent=4)
+        json.dump(dataPac,outfile)
 
+#Proveedores
+def abrirProveedores():
+    mijsonProveedores=[]
+    with open('proveedores.json', 'r', encoding='utf=8') as openfile:
+        mijsonProveedores = json.load(openfile)
+    return mijsonProveedores
+
+def guardarProveedores(dataPro):
+    with open('proveedores.json', 'w', encoding='utf=8') as outfile:
+        json.dump(dataPro,outfile)
 
 
 #Inicio
@@ -69,14 +79,14 @@ while generalTodo == True:
         print("---------------------------------") 
 
         try:
-            seleccion = int(input("Ver Productos 1: \nVentas 2: \nCompras 3:  \nVer Ventas Realizadas 4: \nVer Compras Realizadas 5: \nIngrese opcion:"))
+            seleccion = int(input("(1).Registrar Venta | (2).Registrar Compra: | (3).Salir \nIngrese opcion: "))
             
             booleanoMenu = False
         except ValueError:
             input("ingrese un valor valido")
             system("cls")
 
-    if seleccion == 2:
+    if seleccion == 1:
         emple = abrirEmpleados()
         conta = 1
         pacien = abrirPacientes()
@@ -111,7 +121,7 @@ while generalTodo == True:
         print("Medicamentos")
         print("------------")
         for i in medi:
-            print(contamed,i["nombre"])
+            print(contamed,"|",i["nombre"],"| Precio: $",i["precio"],"| Cantidad Disponible",i["stock"],"|")
             contamed +=1
 
         eleMedi =int(input("ingrese el ID del medicamento: "))
@@ -121,6 +131,11 @@ while generalTodo == True:
         print(f"Precio: ",preciMed)
 
         total = preciMed*cantidad
+
+        stock =medi [eleMedi-1]["stock"]
+        totalStock = stock - cantidad
+
+        medi[eleMedi-1]["stock"]= totalStock
 
         generalVen=abrirVentas()
         for i in generalVen[0]["ventas"]:
@@ -144,19 +159,90 @@ while generalTodo == True:
                 "cantidadVendida": cantidad,
                 "precio": preciMed,
                 "total": total
-                
+
             }
         ]
             
             }
             )
 
+        guardarMedicamentos(medi)
+
         guardarVentas(generalVen)
+        print(f"| Fecha de Venta: ",fe,"| Paciente: ",nombrePaci,"| Direccion: ",direccionPaci, "\n ""| Empleado: ", nombreemple, "| Cargo: ",cargoEmple,"\n" "| ",nombreMedi,"|", cantidad,"|", preciMed,"|", total,"\n| Cantidad Disponible", totalStock,)
         input("guardado con exito")
+        system("cls")
+    if seleccion == 2:
+        Prove = abrirProveedores()
+        conta = 1
+        medi = abrirMedicamentos()
+        contamed = 1
+
+        print("-----------")
+        print("Proveedores")
+        print("-----------")
+        for i in Prove:
+            print(conta,i["nombre"])
+            conta +=1
+
+        elePro = int(input("Ingrese el id del proveedor: "))
+        nombrePro = Prove[elePro-1]["nombre"]
+        contactoPro = Prove[elePro-1]["contacto"]
+
+
+        print("------------")
+        print("Medicamentos")
+        print("------------")
+        for i in medi:
+            print(contamed,"|",i["nombre"],"| Cantidad Disponible",i["stock"],"|")
+            contamed +=1
+
+        eleMedi =int(input("ingrese el ID del medicamento: "))
+        nombreMedi = medi[eleMedi-1]["nombre"]
+        cantidad = int(input("ingrese la cantidad comprada: "))
+        preciMed = int(input("Ingrese el Precio de Compra: "))
+        print(f"Precio: ",preciMed)
+
+        total = preciMed*cantidad
+        stock =medi [eleMedi-1]["stock"]
+        totalStock = stock + cantidad
+
+        medi[eleMedi-1]["stock"]= totalStock
+        compras=abrirCompras()
+        for i in compras:
+            fecha = date.today()
+            fe = fecha.isoformat()
+            
+            
+            compras["compras"].append( {
+        "fechaCompra": fe,
+        "proveedor": {
+            "nombre": nombrePro,
+            "contacto": contactoPro
+        },
+        "medicamentosComprados": [
+            {
+                "nombreMedicamento": nombreMedi,
+                "cantidadComprada": cantidad,
+                "precioCompra": preciMed,
+
+                "total": total
+            }
+        ]
+    }
+            )
+
+        guardarMedicamentos(medi)
+
+        guardarCompras(compras)
+        print("compra Guardada con exito :)")
+
+        print(f"| Fecha de Compra: ",fe,"| Proveedor: ",nombrePro,"| Contacto: ",contactoPro, "\n| Medicamento", nombreMedi, "|",cantidad, "|",preciMed,"|", total, "\n Cantidad Disponible", totalStock)
+        input("Presione enter para continuar")
         system("cls")
 
 
-    if seleccion == 5: 
+    if seleccion == 3: 
         input("Gracias  por preferir FarmCamp, nos vemos luego :)")
         booleanoMenu = False
         break
