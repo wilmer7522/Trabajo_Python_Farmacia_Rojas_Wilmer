@@ -144,6 +144,7 @@ while generalTodo == True:
                 "cantidadVendida": cantidad,
                 "precio": preciMed,
                 "total": total
+                
             }
         ]
             
