@@ -21,7 +21,7 @@ def abrirVentas():
 
 def guardarVentas(dataVen):
     with open('ventas.json', 'w', encoding='utf=8') as outfile:
-        json.dump(dataVen,outfile)
+        json.dump(dataVen,outfile,indent=4)
 #Compras
 def abrirCompras():
     mijsonCompras=[]
@@ -32,6 +32,27 @@ def abrirCompras():
 def guardarCompras(dataCom):
     with open('compras.json', 'w', encoding='utf=8') as outfile:
         json.dump(dataCom,outfile)
+#Empleados
+def abrirEmpleados():
+    mijsonEmpleados=[]
+    with open('empleados.json', 'r', encoding='utf=8') as openfile:
+        mijsonEmpleados = json.load(openfile)
+    return mijsonEmpleados
+
+def guardarEmpleados(dataEmp):
+    with open('empleados.json', 'w', encoding='utf=8') as outfile:
+        json.dump(dataEmp,outfile)
+#Paciente
+def abrirPacientes():
+    mijsonPacientes=[]
+    with open('pacientes.json', 'r', encoding='utf=8') as openfile:
+        mijsonPacientes = json.load(openfile)
+    return mijsonPacientes
+
+def guardarPacientes(dataPac):
+    with open('pacientes.json', 'w', encoding='utf=8') as outfile:
+        json.dump(dataPac,outfile,indent=4)
+
 
 
 #Inicio
@@ -56,31 +77,73 @@ while generalTodo == True:
             system("cls")
 
     if seleccion == 2:
+        emple = abrirEmpleados()
+        conta = 1
+        pacien = abrirPacientes()
+        contapa = 1
+        medi = abrirMedicamentos()
+        contamed = 1
+        print("---------")
+        print("Empleados")
+        print("---------")
+        for i in emple:
+            
+            print(conta,i["nombre"])
+            conta +=1
+            
+        eleEmple = int(input("Ingrese el id del empleado: "))
+        nombreemple = emple[eleEmple-1]["nombre"]
+        cargoEmple = emple[eleEmple-1]["cargo"]
+        print("---------")
+        print("Pacientes")
+        print("---------")
+        for i in  pacien:
+            
+            print(contapa,i["nombre"])
+            contapa +=1
+
+        elePaci = int(input("Ingrese el id del paciente: "))
+        nombrePaci = pacien[elePaci-1]["nombre"]
+        direccionPaci = pacien[elePaci-1]["direccion"]
+
         
+        print("------------")
+        print("Medicamentos")
+        print("------------")
+        for i in medi:
+            print(contamed,i["nombre"])
+            contamed +=1
+
+        eleMedi =int(input("ingrese el ID del medicamento: "))
+        nombreMedi = medi[eleMedi-1]["nombre"]
+        cantidad = int(input("ingrese la vantidad Vendida: "))
+        preciMed = medi[eleMedi-1]["precio"]
+        print(f"Precio: ",preciMed)
+
+        total = preciMed*cantidad
+
         generalVen=abrirVentas()
-        for i in generalVen[0]["Ventas"]:
+        for i in generalVen[0]["ventas"]:
             fecha = date.today()
             fe = fecha.isoformat()
-            paciente = input("ingrese el nombre del paciente: ")
-            direccion = input("Ingrese la direccion del paciente: ")
-            empleado = input("Ingrese el nombre del empleado: ")
-            cargo = input("ingrese el cargo del empleado: ")
+            
             generalVen=abrirVentas()
-            generalVen[0]["Ventas"].append({
+            generalVen[0]["ventas"].append({
                 "fechaVenta": fe,
         "paciente": {
-            "nombre": paciente,
-            "direccion": direccion
+            "nombre": nombrePaci,
+            "direccion": direccionPaci
         },
         "empleado": {
-            "nombre": empleado,
-            "cargo": cargo
+            "nombre": nombreemple,
+            "cargo": cargoEmple
         },
         "medicamentosVendidos": [
             {
-                "nombreMedicamento": "Paracetamol",
-                "cantidadVendida": 2,
-                "precio": 20
+                "nombreMedicamento": nombreMedi,
+                "cantidadVendida": cantidad,
+                "precio": preciMed,
+                "total": total
             }
         ]
             
@@ -88,9 +151,8 @@ while generalTodo == True:
             )
 
         guardarVentas(generalVen)
-        system("clear")
         input("guardado con exito")
-        system("clear")
+        system("cls")
 
 
     if seleccion == 5: 

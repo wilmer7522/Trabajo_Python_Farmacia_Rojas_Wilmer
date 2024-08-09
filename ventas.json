@@ -1,23 +1,112 @@
 [
     {
-        "ventas": [],
-        "Ventas": [
-            {},
+        "ventas": [
             {
-                "fechaVenta": "2024-08-08",
+                "fechaVenta": "2024-08-09",
                 "paciente": {
-                    "nombre": "qw",
-                    "direccion": "r"
+                    "nombre": "fgjfg",
+                    "direccion": "fghjfg"
                 },
                 "empleado": {
-                    "nombre": "t",
-                    "cargo": "sd"
+                    "nombre": "jfgh",
+                    "cargo": "fghj"
                 },
                 "medicamentosVendidos": [
                     {
                         "nombreMedicamento": "Paracetamol",
                         "cantidadVendida": 2,
                         "precio": 20
+                    }
+                ]
+            },
+            {
+                "fechaVenta": "2024-08-09",
+                "paciente": {
+                    "nombre": "Luis",
+                    "direccion": "Calle 789"
+                },
+                "empleado": {
+                    "nombre": "Pedro",
+                    "cargo": "Vendedor"
+                },
+                "medicamentosVendidos": [
+                    {
+                        "nombreMedicamento": "Paracetamol",
+                        "cantidadVendida": 2,
+                        "precio": 20
+                    }
+                ]
+            },
+            {
+                "fechaVenta": "2024-08-09",
+                "paciente": {
+                    "nombre": "Juan",
+                    "direccion": "Calle 123"
+                },
+                "empleado": {
+                    "nombre": "Pedro",
+                    "cargo": "Vendedor"
+                },
+                "medicamentosVendidos": [
+                    {
+                        "nombreMedicamento": "Loratadina",
+                        "cantidadVendida": 3,
+                        "precio": 22
+                    }
+                ]
+            },
+            {
+                "fechaVenta": "2024-08-09",
+                "paciente": {
+                    "nombre": "Maria",
+                    "direccion": "Calle 456"
+                },
+                "empleado": {
+                    "nombre": "Ana",
+                    "cargo": "Vendedora"
+                },
+                "medicamentosVendidos": [
+                    {
+                        "nombreMedicamento": "Ibuprofeno",
+                        "cantidadVendida": 3,
+                        "precio": 25
+                    }
+                ]
+            },
+            {
+                "fechaVenta": "2024-08-09",
+                "paciente": {
+                    "nombre": "Luis",
+                    "direccion": "Calle 789"
+                },
+                "empleado": {
+                    "nombre": "Luis",
+                    "cargo": "Gerente"
+                },
+                "medicamentosVendidos": [
+                    {
+                        "nombreMedicamento": "Aspirina",
+                        "cantidadVendida": 5,
+                        "precio": 15
+                    }
+                ]
+            },
+            {
+                "fechaVenta": "2024-08-09",
+                "paciente": {
+                    "nombre": "Elena",
+                    "direccion": "Calle 101"
+                },
+                "empleado": {
+                    "nombre": "Sofia",
+                    "cargo": "Administradora"
+                },
+                "medicamentosVendidos": [
+                    {
+                        "nombreMedicamento": "Amoxicilina",
+                        "cantidadVendida": 5,
+                        "precio": 40,
+                        "total": 200
                     }
                 ]
             }
