@@ -1,0 +1,26 @@
+[
+    {
+        "ventas": [],
+        "Ventas": [
+            {},
+            {
+                "fechaVenta": "2024-08-08",
+                "paciente": {
+                    "nombre": "qw",
+                    "direccion": "r"
+                },
+                "empleado": {
+                    "nombre": "t",
+                    "cargo": "sd"
+                },
+                "medicamentosVendidos": [
+                    {
+                        "nombreMedicamento": "Paracetamol",
+                        "cantidadVendida": 2,
+                        "precio": 20
+                    }
+                ]
+            }
+        ]
+    }
+]
