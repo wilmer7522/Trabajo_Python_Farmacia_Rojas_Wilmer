@@ -2,6 +2,7 @@ import json
 from os import system
 from datetime import date
 
+
 #Medicamentos
 def abrirMedicamentos():
     mijsonMedi=[]

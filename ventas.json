@@ -95,6 +95,25 @@
                         "total": 120
                     }
                 ]
+            },
+            {
+                "fechaVenta": "2024-08-12",
+                "paciente": {
+                    "nombre": "Luis",
+                    "direccion": "Calle 789"
+                },
+                "empleado": {
+                    "nombre": "Sofia",
+                    "cargo": "Administradora"
+                },
+                "medicamentosVendidos": [
+                    {
+                        "nombreMedicamento": "Clonazepam",
+                        "cantidadVendida": 5,
+                        "precio": 35,
+                        "total": 175
+                    }
+                ]
             }
         ]
     }

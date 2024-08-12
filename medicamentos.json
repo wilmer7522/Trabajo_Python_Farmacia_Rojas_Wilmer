@@ -82,7 +82,7 @@
     {
         "nombre": "Clonazepam",
         "precio": 35,
-        "stock": 25,
+        "stock": 20,
         "fechaExpiracion": "2024-04-21T00:00:00Z",
         "proveedor": {
             "nombre": "ProveedorC",
